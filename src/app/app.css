@@ -1,19 +1,10 @@
-/* Base styles */
-body {
-  background-color: #000000;
-  margin: 0;
-  font-family: 'Georgia', serif;
-  color: #dfc776;
-  min-height: 100vh;
-}
-
 /* Layout */
 .container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  padding: 0;
 }
 
 /* Search Bar */
@@ -65,12 +56,15 @@ input:focus {
 
 /* Book Layout */
 .book-container {
-  width: 900px;
-  height: 600px;
-  margin: 8rem auto 0;  /* Reduced bottom margin */
+  width: 1000px;
+  height: 700px;
+  margin: 10rem auto 0rem;
   position: relative;
   perspective: 2000px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
+
 
 .book {
   width: 100%;
@@ -87,12 +81,12 @@ input:focus {
   background: #dfc776;
   transform-style: preserve-3d;
   display: flex;
-  width: 100%;
+  width: 1000px;
   align-items: stretch; /* make children stretch to the tallest child */
 }
 
 .book-page {
-  width: 450px;
+  width: 500px;
   height: auto; /* allow natural height, flex will stretch to match the taller page */
   position: relative;
   background: #dfc776;
@@ -119,7 +113,7 @@ input:focus {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: -1rem;
   padding: 0.75rem;
   border-radius: 6px;
   background: #704d37;
