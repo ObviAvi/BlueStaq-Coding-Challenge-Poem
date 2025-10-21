@@ -1,0 +1,306 @@
+/* Base styles */
+body {
+  background-color: #000000;
+  margin: 0;
+  font-family: 'Georgia', serif;
+  color: #dfc776;
+  min-height: 100vh;
+}
+
+/* Layout */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Search Bar */
+.search-bar {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  gap: 1rem;
+  background: #704d37;
+  padding: 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 2px solid #ab825e;
+}
+
+.enter-btn {
+  background: #8a7d5e;
+  color: #dfc776;
+  border: 1px solid #ab825e;
+  padding: 0.65rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+}
+
+.enter-btn:hover {
+  background: #ab825e;
+}
+
+input {
+  padding: .75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #8a7d5e;
+  background: #dfc776;
+  color: #383636;
+  min-width: 200px;
+  border-radius: 4px;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: #ab825e;
+  outline: none;
+}
+
+/* Book Layout */
+.book-container {
+  width: 900px;
+  height: 600px;
+  margin: 8rem auto 0;  /* Reduced bottom margin */
+  position: relative;
+  perspective: 2000px;
+}
+
+.book {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  display: flex;
+}
+
+.book-wrapper {
+  border: 15px solid #704d37;
+  border-radius: 5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  background: #dfc776;
+  transform-style: preserve-3d;
+  display: flex;
+  width: 100%;
+  align-items: stretch; /* make children stretch to the tallest child */
+}
+
+.book-page {
+  width: 450px;
+  height: auto; /* allow natural height, flex will stretch to match the taller page */
+  position: relative;
+  background: #dfc776;
+  padding: 2rem;
+  box-sizing: border-box;
+  border: 1px solid #704d37;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-page {
+  border-right: 1px solid #704d37;
+  box-shadow: 10px 0 15px -10px rgba(0, 0, 0, 0.4) inset;
+}
+
+.right-page {
+  border-left: 1px solid #704d37;
+  box-shadow: -10px 0 15px -10px rgba(0, 0, 0, 0.4) inset;
+}
+
+/* Navigation */
+.nav-buttons {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 5rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  background: #704d37;
+  border: 2px solid #ab825e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  width: fit-content;
+}
+
+.nav-btn {
+  background: #8a7d5e;
+  color: #dfc776;
+  border: 1px solid #ab825e;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+}
+
+.nav-btn:hover {
+  background: #ab825e;
+}
+
+.nav-btn:disabled {
+  background: #8a7d5e;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Poem Cards */
+.poems-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  flex: 1 1 auto; /* allow grid to grow and fill page height */
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.poem-card {
+  background: #8a7d5e;
+  padding: 1.5rem;
+  border: 1px solid #704d37;
+  border-radius: 4px;
+  position: relative;
+  color: #dfc776;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.poem-title {
+  font-size: 1.1rem;
+  color: #dfc776;
+  margin: 0 0 0.5rem;
+  font-weight: bold;
+}
+
+.poem-author {
+  font-size: 0.9rem;
+  color: #dfc776;
+  margin-bottom: 1rem;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.poem-preview {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #dfc776;
+}
+
+.read-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+}
+
+.read-btn:hover {
+  background: #333;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #383636;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.modal-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: #dfc776;
+  padding: 3rem;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+  border: 2px solid #704d37;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #383636;
+  padding: 0.5rem;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  color: #383636;
+  margin: 0 0 1rem;
+}
+
+.modal-author {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+  color: #383636;
+}
+
+.modal-poem {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  color: #383636;
+}
+
+/* Status Messages */
+.loading, .error, .no-results {
+  text-align: center;
+  padding: 2rem;
+  background: #dfc776;
+  border-radius: 8px;
+  margin: 10rem 0;
+  border: 2px solid #704d37;
+}
+
+.loading {
+  color: #ab825e;
+}
+
+.error, .no-results {
+  color: #8b1d0c;
+}
+
+@media (max-width: 1000px) {
+  .book-container {
+    width: 95%;
+    height: 500px;
+  }
+  
+  .book-page {
+    width: 50%;
+  }
+}
