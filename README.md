@@ -72,7 +72,6 @@ poetry-angular-app/
 │   │   ├── app.css                  # Main app styling
 │   │   ├── app.html                 # Main app template
 │   │   ├── app.routes.ts
-│   │   ├── app.spec.ts
 │   │   └── app.ts                   # Main app logic
 │   ├── index.html
 │   ├── main.ts
