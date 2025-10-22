@@ -2,6 +2,11 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #000000;
+    background-image: url('/woodtexture.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     overflow-x: hidden;
+    min-height: 100vh;
 }
